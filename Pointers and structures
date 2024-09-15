@@ -1,0 +1,17 @@
+#include <stdio.h
+
+struct Person {
+    int age;
+    char name[20];
+};
+
+int main() {
+    struct Person *personPtr;
+    personPtr = (struct Person *) malloc(sizeof(struct Person));
+    (*personPtr).age = 30;
+    strcpy((*personPtr).name, "John Doe");
+    printf("Age: %d\n", (*personPtr).age);
+    printf("Name: %s\n", (*personPtr).name);
+    free(personPtr);
+    return 0;
+}
